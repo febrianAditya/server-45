@@ -20,16 +20,3 @@ jobs:
 
     - name: Install Dependencies
       run: npm install
-
-    - name: Deploy to Server
-      env:
-        HOST: ${{ secrets.HOST_DNS }}
-        USERNAME: ${{ secrets.USERNAME }}
-        SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-      run: |
-        ssh -o StrictHostKeyChecking=no $USERNAME@$HOST << 'EOF'
-          cd /home/ubuntu/server-45
-          git pull origin main
-          npm install --production
-          pm2 restart all
-        EOF
