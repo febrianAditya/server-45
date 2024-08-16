@@ -3,7 +3,7 @@ module.exports = {
       name   : "server1",
       script : "./app.js",
   env: {
-  PORT: 443
+  PORT: 80
   }
     }]
   }
