@@ -20,7 +20,7 @@ const app = express()
 const port = process.env.PORT || 3000
 
 app.get('/hello', (req, res) => {
-    res.status(200).json({ message: "SANTOS And Friends 2"})
+    res.status(200).json({ message: "SANTOS"})
 })
 
 app.listen(port, () => {
